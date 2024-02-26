@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: monospace; */
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  list-style: none;
+}
+
+.nav-l {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo {
+  /* color: rgb(75, 72, 72); */
+  color: blueviolet;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 30%;
+  padding-left: 4rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.search-bar {
+  max-width: 100%;
+  min-width: 50%;
+  margin: 0.3rem;
+}
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  padding: 10px;
+}
+.cart {
+  font-weight: bolder;
+  padding: 0.1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Product component Style  */
+
+.product-grid-column {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  font-family: serif;
+}
+
+.caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  background-color: white;
+
+  color: black;
+  padding: 0.8rem 0.8rem;
+  font-size: 0.8rem;
+}
+.cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0.3rem;
+  background-color: rgb(255, 253, 253);
+
+  color: black;
+  margin: 0.2rem;
+  font-size: 1.5rem;
+}
+.h-icon {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  background-color: transparent;
+  color: rgb(176, 30, 40);
+  padding: 0.3rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* ----------------FilterSection component------------*/
+.filter_section {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 0rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 4.5rem;
+}
+
+.filter_section .filter-company label:hover,
+.filter_section .filter_price label:hover {
+  color: goldenrod;
+  transition: all 0.2s ease;
+}
+
+.filter_price input {
+  margin: 0.5rem 0 1rem 0;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* --------Product----------- */
+
+/* ----Image----- */
+.grid-four-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 8rem;
+  height: auto;
+  padding: 0;
+  gap: 1rem;
+}
+.imgDiv_Select {
+  border: 1px solid black;
+}
+.imgDiv_Not_Select {
+  border: none;
+}
+.grid-four-column div {
+  padding: 0.4rem;
+}
+.grid-four-column div .box_image {
+  width: 100%;
+}
+
+.selected {
+  background-color: #f3dddd;
+}
+.not-selected {
+  background-color: white;
+}
+.page-num {
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+}
+.pagination {
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next {
+  padding: 0.4rem;
+  color: blueviolet;
+}
+
+/*---------------Footer--------------*/
+footer {
+  font-family: sans-serif;
+}
+footer h3 {
+  margin-bottom: 2.4rem;
+}
+.footer_icons:hover {
+  cursor: pointer;
+  color: blueviolet;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 680px) {
+  .logo {
+    padding-left: 4rem;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .product-grid-column {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
