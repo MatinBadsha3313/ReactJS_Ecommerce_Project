@@ -14,16 +14,17 @@ const StoreContext = createContext({
 
 const getSaveCartItems = () => {
   let saveCartData = localStorage.getItem("cartItems");
-  if (saveCartData === "") {
+  if (saveCartData === null) {
     return [];
   } else {
     // return console.log(saveCartData);
     return JSON.parse(saveCartData);
   }
 };
+
 const getWishList = () => {
   let wishListItems = localStorage.getItem("wishList");
-  if (wishListItems === "") {
+  if (wishListItems === null) {
     return [];
   } else {
     return JSON.parse(wishListItems);
