@@ -68,7 +68,7 @@ const reducer = (state, action) => {
       const priceSort = [...new Set(priceM)];
       const priceMax = Math.max(...priceSort);
       const priceMin = Math.min(...priceSort);
-      // console.log("total", totalData);
+      console.log("total", totalData);
       return {
         ...state,
         isLoading: false,

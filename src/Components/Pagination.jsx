@@ -7,6 +7,9 @@ export default function Pagination({
   previousPage,
   setPage,
 }) {
+  // console.log("skip", skip);
+  // console.log("total_Items", total_Items);
+  // console.log("total_Items", total_Items)
   return (
     <div className="pagination">
       {skip >= 2 && (
@@ -14,7 +17,7 @@ export default function Pagination({
           <GrPrevious className="fs-4" />
         </span>
       )}
-      {[...Array(total_Items / 20)].map((_, index) => {
+      {[...Array(Math.round(total_Items / 20))].map((_, index) => {
         return (
           <span
             key={index}
@@ -27,7 +30,7 @@ export default function Pagination({
           </span>
         );
       })}
-      {skip <= 4 && (
+      {skip <= 9 && (
         <span className="next" onClick={nextPage}>
           <GrNext className="fs-4" />
         </span>
