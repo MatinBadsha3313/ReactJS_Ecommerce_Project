@@ -21,10 +21,11 @@ const FilterSection = () => {
     const categoryByFilter = product.map((elm) => elm[filterCate]);
 
     const vlaueOfCate = [...new Set(categoryByFilter)];
+
     return vlaueOfCate.filter((filterCate) => filterCate !== undefined);
   };
-  const vlaueOfCategory = allCategory(all_Items, "brand");
-  const vlaueOfBrand = allCategory(all_Items, "category");
+  const vlaueOfCategory = allCategory(all_Items, "category");
+  const vlaueOfBrand = allCategory(all_Items, "brand");
 
   return (
     <>
@@ -46,27 +47,33 @@ const FilterSection = () => {
         {/* -------------Filter_By_Brand----------  */}
         <div className="filter-company">
           <h5>Brand</h5>
-          {vlaueOfBrand.map((elm, index) => {
-            return (
-              <div className="form-check" key={index}>
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="radioBrand"
-                  id={`radioBrand${index}`}
-                  value={elm}
-                  onClick={() => filterFunction(elm, "brand")}
-                  // onClick={filterBy}
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor={`radioBrand${index}`}
-                >
-                  {elm}
-                </label>
-              </div>
-            );
-          })}
+          {vlaueOfBrand.length === 0 ? (
+            <div className="form-check">
+              <label className="label">No Brand</label>
+            </div>
+          ) : (
+            vlaueOfBrand.map((elm, index) => {
+              return (
+                <div className="form-check" key={index}>
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="radioBrand"
+                    id={`radioBrand${index}`}
+                    value={elm}
+                    onClick={() => filterFunction(elm, "brand")}
+                    // onClick={filterBy}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor={`radioBrand${index}`}
+                  >
+                    {elm}
+                  </label>
+                </div>
+              );
+            })
+          )}
         </div>
         {/* -------------Filter_By_Shorting----------  */}
         <div className="filter-company">

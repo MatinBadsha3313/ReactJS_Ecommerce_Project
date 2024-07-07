@@ -66,7 +66,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <Link to="#">Linkedin</Link>
+                  <Link
+                    to="https://www.linkedin.com/in/md-matin-badsha/"
+                    target="_blank"
+                  >
+                    Linkedin
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -90,22 +95,26 @@ const Footer = () => {
             ©2024BadshaKhan . All Rights Reserved.
           </div>
           <div className=" d-flex justify-content-between ">
-            <a to="#" className="fs-3">
+            <Link to="#" className="fs-3">
               <FaFacebook className="footer_icons" />
-            </a>
-            <a to="#" className="fs-3">
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/md-matin-badsha/"
+              target="_blank"
+              className="fs-3"
+            >
               <FaLinkedin className="footer_icons" />
-            </a>
-            <a
+            </Link>
+            <Link
               to="https://github.com/MatinBadsha3313?tab=repositories"
               target="_blank"
               className="fs-3"
             >
               <FaGithub className="footer_icons" />
-            </a>
-            <a to="#" className="fs-3">
+            </Link>
+            <Link to="#" className="fs-3">
               <FaSquareXTwitter className="footer_icons" />
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

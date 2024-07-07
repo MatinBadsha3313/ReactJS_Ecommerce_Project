@@ -100,11 +100,6 @@ const FilterStoreProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //----------Clear_All_Filters------------
-  const clearFilters = () => {
-    dispatch({ type: "CLEAR_ALL_FILTERS", payload: state.all_Items });
-  };
-
   //------------Star Rating function---------------
   const starClick = (i) => {
     const vlaue = i;
@@ -126,7 +121,10 @@ const FilterStoreProvider = ({ children }) => {
     const allProducts = items.filter((element) => element[value] === elm);
     dispatch({ type: "FILTER_BY_CATEGORY", payload: allProducts });
   };
-
+  //----------Clear_All_Filters------------
+  const clearFilters = () => {
+    dispatch({ type: "CLEAR_ALL_FILTERS", payload: state.all_Items });
+  };
   //====================Price===================
   // Function to filter products based on price range
   const filterProductsByPrice = (minPrice, maxPrice) => {
