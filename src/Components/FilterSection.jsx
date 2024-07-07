@@ -21,10 +21,10 @@ const FilterSection = () => {
     const categoryByFilter = product.map((elm) => elm[filterCate]);
 
     const vlaueOfCate = [...new Set(categoryByFilter)];
-    return vlaueOfCate;
+    return vlaueOfCate.filter((filterCate) => filterCate !== undefined);
   };
-  const vlaueOfCategory = allCategory(all_Items, "category");
-  const vlaueOfBrand = allCategory(all_Items, "brand");
+  const vlaueOfCategory = allCategory(all_Items, "brand");
+  const vlaueOfBrand = allCategory(all_Items, "category");
 
   return (
     <>

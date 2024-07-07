@@ -62,13 +62,12 @@ const reducer = (state, action) => {
         isLoading: true,
       };
     case "SET_API_DATA":
-      // console.log(action.payload);
       const { data, totalData } = action.payload;
       const priceM = data.map((elem) => elem.price);
       const priceSort = [...new Set(priceM)];
       const priceMax = Math.max(...priceSort);
       const priceMin = Math.min(...priceSort);
-      console.log("total", totalData);
+
       return {
         ...state,
         isLoading: false,

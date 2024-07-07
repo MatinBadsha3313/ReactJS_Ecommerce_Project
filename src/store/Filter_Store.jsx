@@ -100,6 +100,11 @@ const FilterStoreProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  //----------Clear_All_Filters------------
+  const clearFilters = () => {
+    dispatch({ type: "CLEAR_ALL_FILTERS", payload: state.all_Items });
+  };
+
   //------------Star Rating function---------------
   const starClick = (i) => {
     const vlaue = i;
@@ -121,10 +126,7 @@ const FilterStoreProvider = ({ children }) => {
     const allProducts = items.filter((element) => element[value] === elm);
     dispatch({ type: "FILTER_BY_CATEGORY", payload: allProducts });
   };
-  //----------Clear_All_Filters------------
-  const clearFilters = () => {
-    dispatch({ type: "CLEAR_ALL_FILTERS", payload: state.all_Items });
-  };
+
   //====================Price===================
   // Function to filter products based on price range
   const filterProductsByPrice = (minPrice, maxPrice) => {
@@ -186,12 +188,11 @@ const FilterStoreProvider = ({ children }) => {
   //----------Calculate_Min_Max_Price_Range_and dispatch--------
   // console.log(state.filter_Items);
   const calculatePriceRanges = () => {
-    const priceArray = state.filter_Items.map((product) => product.price);
+    const priceArray = state.all_Items.map((product) => product.price);
     // console.log(priceArray, "proceo");
     const minPrice = Math.min(...priceArray);
     const maxPrice = Math.max(...priceArray);
-    // console.log(minPrice);
-    // console.log(maxPrice);
+
     const numRanges = 5;
 
     //Calling the Generate price function to generate start and end
@@ -210,7 +211,8 @@ const FilterStoreProvider = ({ children }) => {
 
   useEffect(() => {
     calculatePriceRanges();
-  }, [state.filter_Items]);
+  }, [state.all_Items]);
+
   // ---------To set all Products for Filters-----------
   useEffect(() => {
     dispatch({ type: "LOAD_ALL_PRODUCTS", payload: items });
